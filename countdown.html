@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+<head>    
+<title>spring '25 class countdown!</title>
+    
+<style>
+p {
+  text-align: center;
+  font-size: 60px;
+  margin-top: 0px;
+  color: #cb416b;
+  background-color: pink;
+}
+</style>
+</head>
+<body>
+
+<p id="days"></p>
+
+<script>
+//Sets the date that class ends
+var endDate = new Date("May 2, 2025 15:30:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var today = new Date().getTime();
+    
+  // Calculate the distance between today and May 2
+  var daysLeft = endDate - today;
+    
+  // Time calculations for days, hours, minutes and seconds
+  //Using class floor to round to the nearest second
+  var days = Math.floor(daysLeft / (1000 * 60 * 60 * 24));
+
+    
+  // Output the result in an element with id="days"
+  document.getElementById("days").innerHTML = days + " days!";
+    
+  // If the count down is over, write some text 
+  if (daysLeft < 0) {
+    clearInterval(x);
+    document.getElementById("days").innerHTML = "all classes completed! time to study for finals!";
+  }
+}, 1000);
+</script>
+ <a href="https://github.com/myraamurray" style="text-decoration: none; color: pink;">visit my github!</a>
+</body>
+</html>
