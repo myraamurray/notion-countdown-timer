@@ -6,19 +6,20 @@
   /* Set design for the body (where text is displayed) */
   body { 
       font-family: Inter, sans-serif;
-      display: flex;
+      display: center;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      margin: 0;
+      margin: 10;
       background-color: #fafafa;
   }
   .countdown {
       text-align: center;
   }
   .countdown h1 {
-      font-size: 4em;
+      font-size: 50px;
       color: #fc91c1;
+
   }
   .countdown p {
       font-size: 1.2em;
@@ -30,8 +31,8 @@
 
 <!-- Using a div class for the display -->
 <div class="countdown"> 
-  <h1 id="days">
-  <p id="message"></p>
+  <h1 id="days"></h1>
+  <p id="message">days left!</p>
 </div> 
 <script>
 //Sets the date that class ends
@@ -51,8 +52,8 @@ var x = setInterval(function() {
   var days = Math.floor(daysLeft / (1000 * 60 * 60 * 24));
 
     
-  // Output the result in an element with the remaining classes, using textContent for efficiency
-  document.getElementById("message").textContent = `${days} classes remaining!`;
+  // Output the result in an element with the remaining classes, using textContent for efficiency. Output to the id "days"
+  document.getElementById("days").textContent = `${days}`;
     
   // If the count down is over, write some text 
   if (daysLeft < 0) {
@@ -61,10 +62,6 @@ var x = setInterval(function() {
   }
 }, 1000);
 </script>
-
-<footer>
-<a href="https://github.com/myraamurray" style="text-decoration: none; color: #fc91c1;">visit my github!</a>
-</footer>
 
 </body>
 </html>
